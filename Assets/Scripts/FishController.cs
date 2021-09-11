@@ -5,6 +5,7 @@ using UnityEngine;
 public class FishController : MonoBehaviour
 {
     public float speed = 1f;
+    public bool player1 = false;
 
     // Start is called before the first frame update
     void Start()
@@ -15,15 +16,33 @@ public class FishController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W)) {
-            transform.Translate(0, speed * Time.deltaTime, 0);
-            Debug.Log("up");
-        }
-
-        if (Input.GetKey(KeyCode.S))
+        if (player1)
         {
-            transform.Translate(0, -speed * Time.deltaTime, 0);
-            Debug.Log("down");
+            if (Input.GetKey(KeyCode.W))
+            {
+                transform.Translate(0, speed * Time.deltaTime, 0);
+                //Debug.Log("up");
+            }
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                transform.Translate(0, -speed * Time.deltaTime, 0);
+                //Debug.Log("down");
+            }
+        }
+        else
+        {
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                transform.Translate(0, speed * Time.deltaTime, 0);
+                //Debug.Log("up");
+            }
+
+            if (Input.GetKey(KeyCode.DownArrow))
+            {
+                transform.Translate(0, -speed * Time.deltaTime, 0);
+                //Debug.Log("down");
+            }
         }
     }
 }
