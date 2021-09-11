@@ -25,5 +25,21 @@ public class SwimmerMove : MonoBehaviour
         else if (TopRow) {
             transform.position += transform.right * -speed * Time.deltaTime;
         }
+        
+    }
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.gameObject.name == "P1" && P1Control.P1hit == false)
+        {
+            P1Control.P1hit = true;
+            Debug.Log("p1 knock");
+        }
+
+        if (other.gameObject.name =="P2" && P2Control.P2hit == false)
+        {
+            P2Control.P2hit = true;
+            Debug.Log("p2 knock");
+        }
+
     }
 }

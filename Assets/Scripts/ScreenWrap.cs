@@ -27,7 +27,6 @@ public class ScreenWrap : MonoBehaviour
             transform.position = new Vector3(7, transform.position.y, transform.position.z);
             swimmermove.speed = Random.Range(1.0f, 5.0f);
         }
-        Debug.Log("moving");
-        Debug.Log(transform.position.x);
+
     }
 }
